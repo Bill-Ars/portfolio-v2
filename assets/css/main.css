@@ -1,0 +1,30 @@
+/* =========================================================
+   Ponto de entrada dos estilos.
+   A ordem importa: tokens -> base -> layout -> componentes -> secções.
+   ========================================================= */
+
+/* Base */
+@import url("base/variables.css");
+@import url("base/reset.css");
+@import url("base/typography.css");
+@import url("base/animations.css");
+
+/* Layout */
+@import url("layout/container.css");
+@import url("layout/header.css");
+@import url("layout/footer.css");
+
+/* Componentes reutilizáveis */
+@import url("components/buttons.css");
+@import url("components/cards.css");
+@import url("components/tags.css");
+@import url("components/forms.css");
+
+/* Secções da página */
+@import url("sections/hero.css");
+@import url("sections/about.css");
+@import url("sections/services.css");
+@import url("sections/projects.css");
+@import url("sections/journey.css");
+@import url("sections/cta.css");
+@import url("sections/contact.css");

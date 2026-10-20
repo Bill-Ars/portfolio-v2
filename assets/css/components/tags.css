@@ -1,0 +1,111 @@
+/* Etiquetas pequenas (tecnologias de um projecto) */
+.tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    background: rgba(148, 163, 184, 0.08);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: var(--fs-xs);
+    font-weight: 500;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+/* Badge de estado (ex.: "Em desenvolvimento") */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: var(--radius-full);
+    background: rgba(7, 11, 20, 0.8);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid var(--color-border-strong);
+    color: var(--color-heading);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+}
+
+.badge--progress::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: var(--radius-full);
+    background: #facc15;
+}
+
+.badge--done::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: var(--radius-full);
+    background: var(--color-success);
+}
+
+/* Chip com ícone (competências) */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0.5rem 0.9rem;
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    transition: border-color var(--duration-fast), transform var(--duration-fast) var(--ease);
+}
+
+.chip:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.chip i {
+    color: var(--color-primary);
+}
+
+.chip--learning {
+    border-style: dashed;
+}
+
+.chip--learning small {
+    color: var(--color-text-muted);
+    font-size: 0.68rem;
+}
+
+/* Botões de filtro dos projectos */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    transition: all var(--duration-fast);
+}
+
+.filter-btn:hover {
+    color: var(--color-heading);
+    border-color: var(--color-border-strong);
+}
+
+.filter-btn[aria-pressed="true"] {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+}

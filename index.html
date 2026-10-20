@@ -1,310 +1,294 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio-DevX</title>
+    <title>Bill Arsénio | Frontend Developer</title>
+    <meta name="description" content="Portfólio de Bill Arsénio Ndayisaba — Frontend Web Developer em Maputo, Moçambique. HTML, CSS, JavaScript, React e SQL.">
+    <meta name="author" content="Bill Arsénio Ndayisaba">
+    <meta name="theme-color" content="#070b14">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Open Graph (pré-visualização ao partilhar o link) -->
+    <meta property="og:title" content="Bill Arsénio | Frontend Developer">
+    <meta property="og:description" content="Interfaces web modernas, responsivas e bem organizadas.">
+    <meta property="og:image" content="assets/images/profile.jpeg">
+    <meta property="og:type" content="website">
 
-    <link rel="stylesheet" href="estrutura.css">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
 
-  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Activa as animações de entrada; se os módulos JS não carregarem, mostra tudo na mesma -->
+    <script>
+        document.documentElement.classList.add("js");
+        setTimeout(function () {
+            if (!window.__portfolioReady) document.documentElement.classList.remove("js");
+        }, 2500);
+    </script>
+    <script type="module" src="assets/js/main.js"></script>
 </head>
 
-
 <body>
+    <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
 
-
-
-
-
-    <!--Navegation Bar-->
-    <header class="containerHeader">
-
-
-      <!-- logotipo -->
-
-        <div class="itemH1">
-
-
-
-            
-            <a href="">
-            
-                    <span><a href="index.html">BAN</a></span>
-            
+    <!-- ================= HEADER ================= -->
+    <header class="site-header" data-header>
+        <div class="container nav">
+            <a href="#inicio" class="logo" aria-label="Bill Arsénio — início">
+                <span class="logo__name">Bill <span class="text-gradient">Arsénio</span></span>
+                <span class="logo__role">Frontend Developer</span>
             </a>
-        </div>
 
-        <!-- links de navegacao -->
-         <div class="itemH2">
-
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#Projectos">Projectos</a>
-                <a href="#Experiencia">Experiencia</a>
-                <a href="#Contacto">Contactos</a>
+            <nav class="nav__menu" id="nav-menu" data-nav-menu aria-label="Navegação principal">
+                <ul class="nav__list">
+                    <li><a class="nav__link" href="#inicio">Início</a></li>
+                    <li><a class="nav__link" href="#sobre">Sobre</a></li>
+                    <li><a class="nav__link" href="#servicos">Serviços</a></li>
+                    <li><a class="nav__link" href="#projectos">Projectos</a></li>
+                    <li><a class="nav__link" href="#percurso">Percurso</a></li>
+                    <li><a class="nav__link" href="#contacto">Contacto</a></li>
+                </ul>
+                <a href="#contacto" class="btn btn--primary btn--sm nav__cta">Fale comigo</a>
             </nav>
 
-         </div>
-
-
+            <button class="nav__toggle" type="button" data-nav-toggle aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
+    <main id="conteudo">
 
-    <main class="containerMain">
-        <!-- Nesse meu project, vou adicionar 3 sections -->
+        <!-- ================= HERO ================= -->
+        <section class="hero" id="inicio">
+            <div class="hero__bg" aria-hidden="true"></div>
 
-        <!-- section introdutorio  -->
-        <section class="section1">
-            
+            <div class="container hero__grid">
+                <div class="hero__content">
+                    <span class="eyebrow" data-reveal>Olá, eu sou</span>
 
+                    <h1 class="hero__title" data-reveal>
+                        Bill <span class="text-gradient">Arsénio</span>
+                    </h1>
 
-            <!--Primeira caixinha-->
-            <div class="item11">
-                <div><img src="images/myPic.jpg" alt=""></div>
-            </div>
+                    <p class="hero__role" data-reveal>
+                        <span data-typewriter>Frontend Web Developer</span><span class="hero__caret" aria-hidden="true"></span>
+                    </p>
 
+                    <p class="hero__text" data-reveal>
+                        Desenvolvedor Frontend em Maputo e estudante de Ciência da Computação. Construo interfaces
+                        web modernas, rápidas e responsivas — com código limpo, organizado e pensado para crescer.
+                    </p>
 
+                    <div class="hero__actions" data-reveal>
+                        <a href="#projectos" class="btn btn--primary">
+                            Ver projectos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a href="assets/docs/Bill_Arsenio_CV.pdf" class="btn btn--ghost" download>
+                            <i class="fa-solid fa-download" aria-hidden="true"></i> Baixar CV
+                        </a>
+                    </div>
 
-
-            <div class="item12">
-                <p>
-                    <h1>Sou um desenvolvedor em <span class="destaque">constante aprendizagem </span>!</h1>
-                </p>
-            </div>
-
-
-
-            <div  class="item13">
-                <p>
-                    Desenvolvedor em formação, focado em frontend moderno e backend com Java. 
-                    Gosto de entender como as coisas funcionam por dentro — do DOM ao servidor. 
-                    Cada projecto é uma oportunidade de aprender, melhorar e criar algo útil.
-                </p>
-
-            </div>
-
-
-
-
-            <!--div para botoes-->
-            <div  class="item14">
-
-
-                <!--button get in touch-->
-                <div>
-                    <a href="tel:+258870726376"><button class="button1">Ligar</button></a>
+                    <ul class="hero__stats" data-reveal data-stats aria-label="Resumo"></ul>
                 </div>
 
+                <div class="hero__visual" data-reveal>
+                    <div class="hero__photo">
+                        <img src="assets/images/profile.jpeg" alt="Fotografia de Bill Arsénio" width="420" height="500" fetchpriority="high">
+                    </div>
 
-                <div>
-                    <a href="pdf/Bill_Arsénio_Resume.pdf"  download=""><button class="button2">Baixe o meu CV</button></a>
-                </div>
-            </div>
+                    <div class="floating-card floating-card--top">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        Disponível para oportunidades
+                    </div>
 
-
-            <div class="item15" >
-
-                <div class="item15-1"><strong>Experiencia comprovada em:</strong>
-                </div>
-
-                <div class="item15-2">
-                    <nav>
-
-                        <span><i class="fa-brands fa-html5"></i></span>
-
-                        <span><i class="fa-brands fa-css3"></i></span>
-
-                        <span><i class="fa-brands fa-js"></i></span>
-
-                        <span><i class="fa-brands fa-java"></i></span>
-
-                        
-                       
-
-                    </nav>
+                    <div class="floating-card floating-card--bottom">
+                        <i class="fa-solid fa-code" aria-hidden="true"></i>
+                        <div>
+                            <strong>Frontend Developer</strong>
+                            <small>HTML · CSS · JavaScript</small>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-
-
-
+            <div class="container">
+                <div class="tech-strip" data-reveal>
+                    <span class="tech-strip__label">Tecnologias com que trabalho</span>
+                    <ul class="tech-strip__list" data-tech-strip></ul>
+                </div>
+            </div>
         </section>
 
+        <!-- ================= SOBRE ================= -->
+        <section class="section" id="sobre">
+            <div class="container about">
+                <div class="about__content">
+                    <span class="eyebrow" data-reveal>Sobre mim</span>
+                    <h2 class="section__title" data-reveal>Transformo ideias em soluções digitais que funcionam</h2>
 
+                    <p data-reveal>
+                        Sou Frontend Web Developer e estudante de Licenciatura em Ciência da Computação no ISUTC.
+                        Gosto de entender como as coisas funcionam por dentro — do DOM à base de dados — e de
+                        transformar esse conhecimento em produtos úteis para pessoas reais.
+                    </p>
+                    <p data-reveal>
+                        O meu foco é o frontend: interfaces limpas, acessíveis e responsivas com HTML, CSS, JavaScript
+                        e React. Trabalho também com bases de dados SQL (MySQL e PostgreSQL) e estou a aprofundar o
+                        backend com Java e Spring Boot.
+                    </p>
 
-         <!-- section para projects -->
-        <section class="section2">
+                    <ul class="about__highlights" data-reveal>
+                        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Design responsivo (mobile first)</li>
+                        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Manipulação do DOM e JavaScript moderno</li>
+                        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Bases de dados relacionais (SQL)</li>
+                        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Git e GitHub no dia-a-dia</li>
+                    </ul>
 
-        <div class="projects"> Meus Projectos</div>
-            
-
-        <div class="projectsEx">
-
-
-            <!---Primeiro projecto-->
-             
-            <div class="projecto1">
-                <!--Imagem do projecto-->
-                <div class="divImg1"><img src="images/talentoflowww.png" alt="imagem do projecto 1"   width="250px"></div>
-
-                <!--Aqui entram detalhes do projecto-->
-
-                <div>
-                    <div >
-                        <div><a href="https://talentflowapp.vercel.app/">Clique aqui para visitar o meu projecto</a></div>
-                           
-                        <!--Nome do projecto-->
-                        <div class="tituloProj"><h3>Talent Flow</h3></div>
-                    </div>
-
-                    <div><span class="setaInclinada"><i class="fa-solid fa-arrow-right"></i></span></div>
-
+                    <a href="assets/docs/Bill_Arsenio_CV.pdf" class="btn btn--primary" download data-reveal>
+                        Baixar CV <i class="fa-solid fa-download" aria-hidden="true"></i>
+                    </a>
                 </div>
+
+                <aside class="info-card" data-reveal aria-label="Informações de contacto">
+                    <ul class="info-card__list" data-info-list></ul>
+                </aside>
             </div>
-            
-
-            <!--<div class="projecto2">
-
-               
-                <div><img src="images/proj2.png" alt="CSS TUTORIAL"  width="250px"></div>
-
-               
-
-                <div class="div2" >
-                    <div >
-                        <div><a href="">Clique aqui para visitar o meu projecto</a></div>
-                           
-                       
-                        <div class="tituloProj2"><h3>CSS TUTORIAL</h3></div>
-                    </div>
-
-                    <div ><span class="setaInclinada"><i class="fa-solid fa-arrow-right"></i></span></div>
-
-                </div>
-            </div>-->
-
-
-            
-                   
-        </div>
-
-
         </section>
 
+        <!-- ================= SERVIÇOS ================= -->
+        <section class="section section--alt" id="servicos">
+            <div class="container">
+                <header class="section__header">
+                    <span class="eyebrow" data-reveal>O que faço</span>
+                    <h2 class="section__title" data-reveal>Como posso ajudar a sua equipa</h2>
+                </header>
 
-        <!-- section para experiencia -->
-
-        <section class="section3">
-
-            <div class="experience"><strong><h1>EXPERIENCIA</h1></strong></div>
-
-            
-            
-            
-            <section class="experienciaUm">
-                <div class="cargo1">
-                    <div class="job1">
-                        <span class="box-icon">
-                            <img src="" alt="">
-                        </span>
-                        <span class="jobTitle1">Web Development Freelancer</span>
-                    </div>
-
-
-
-                   
-
-                
-                    <div class="ano1">Nov 2024 - Present</div>
-                </div>
-                <!--Descricao da funcao-->
-                <div class="descricao1">
-                    <p class="descricao1"> Estudante de Desenvolvimento Web com foco em HTML, CSS e JavaScript. 
-        Experiência na criação de interfaces responsivas, manipulação do DOM 
-        e implementação de validação de formulários. Desenvolvimento de projetos 
-        práticos como sistemas de inscrição e aplicações estilo mobile, utilizando 
-        Git e GitHub para versionamento e organização do código.</p>
-                </div>
-            </section>
-
-            <section class="experienciaDois">
-                <div class="cargo2">
-                    <div class="job2">
-                        <span><img src="images/" alt=""></span> 
-
-                        <span class="jobTitle2">TalentFlow App</span>
-                    </div>
-
-                    
-                
-                
-                    <div class="ano2">Jan 2026 - Present</div>
-                </div>
-                <!--Descricao da funcao-->
-                <div class="descricao2">
-                    <p><div class="descricao2">
-    <p>
-        Desenvolvimento da TalentFlow App, uma plataforma para gestão de vagas de emprego, 
-        permitindo a visualização de vagas por categorias, destaques das oportunidades mais relevantes 
-        e fácil acesso aos detalhes de cada vaga. Implementação de interfaces interativas e responsivas 
-        para melhorar a experiência de candidatos e empresas.
-    </p>
-</div></p>
-                </div>
-            </section>
-
-
-
-
+                <div class="services-grid" data-services></div>
+            </div>
         </section>
 
+        <!-- ================= PROJECTOS ================= -->
+        <section class="section" id="projectos">
+            <div class="container">
+                <header class="section__header section__header--split">
+                    <div>
+                        <span class="eyebrow" data-reveal>Portfólio</span>
+                        <h2 class="section__title" data-reveal>Projectos em destaque</h2>
+                    </div>
 
-    </main>
+                    <div class="filters" role="group" aria-label="Filtrar projectos" data-project-filters data-reveal></div>
+                </header>
 
-      
+                <div class="projects-grid" data-projects aria-live="polite"></div>
 
-    <footer class="footer">  <!--Vai conter 2 divs. O primeiro div contem 3 divs-->
-        
-        <div class="parte1">
-            <!--Contacto-->
-
-            <div><strong><h3>Contactos</h3></strong></div>
-            
-            <!--Aqui seguira uma e descricao sumaria sobre a trajectoria como profissional-->
-            <div class="textoFinal"><p>Queira entrar em contacto para mais informacoes por meio dos canais abaixo disponiveis:</p></div>
-
-            <!--Dados do dev-->
-            <div class="email">    <!--Este div de email vai conter dois sub divs!-->
-                <div><span><i class="fa-solid fa-envelope"></i></span></div>
-                <div>
-                    <a href="arceniobill826@gmail.com">
-                        <h4>arceniobill826@gmail.com</h4>
+                <div class="section__more" data-reveal>
+                    <a href="https://github.com/Bill-Ars?tab=repositories" class="btn btn--ghost" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i> Ver mais no GitHub
                     </a>
                 </div>
             </div>
-        </div>
+        </section>
 
+        <!-- ================= PERCURSO ================= -->
+        <section class="section section--alt" id="percurso">
+            <div class="container journey">
+                <div>
+                    <header class="section__header section__header--left">
+                        <span class="eyebrow" data-reveal>Percurso</span>
+                        <h2 class="section__title" data-reveal>Experiência e formação</h2>
+                    </header>
+                    <ol class="timeline" data-timeline></ol>
+                </div>
 
-
-            <div class="endereco">  <!--Segundo div-->
-                <nav>
-                    
-                    <div><a href="Message Dei Fillium on WhatsApp. https://wa.me/message/LDIY6J4KE33ZM1"><span><i class="fa-brands fa-whatsapp"></i></span></a></div>
-                    <div><a href="https://www.linkedin.com/in/bill-ars%C3%A9nio-334281258/"><span><i class="fa-brands fa-linkedin"></i></span></a>
-                    </div>
-                    <div><a href="https://github.com/Bill-Ars?tab=repositories"><span><i class="fa-brands fa-github"></i></span></a></div>
-                    
-                </nav>
+                <div>
+                    <header class="section__header section__header--left">
+                        <span class="eyebrow" data-reveal>Competências</span>
+                        <h2 class="section__title" data-reveal>Stack técnica</h2>
+                    </header>
+                    <div class="skills" data-skills></div>
+                </div>
             </div>
+        </section>
 
+        <!-- ================= CTA ================= -->
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta__box" data-reveal>
+                    <div>
+                        <h2 id="cta-title" class="cta__title">Vamos trabalhar juntos?</h2>
+                        <p>Estou aberto a estágios, oportunidades júnior e projectos freelance. Vamos conversar sobre a sua ideia.</p>
+                    </div>
+                    <a href="#contacto" class="btn btn--light">
+                        Entrar em contacto <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACTO ================= -->
+        <section class="section" id="contacto">
+            <div class="container contact">
+                <div class="contact__intro">
+                    <span class="eyebrow" data-reveal>Contacto</span>
+                    <h2 class="section__title" data-reveal>Vamos conversar</h2>
+                    <p data-reveal>Tem uma vaga, um projecto ou apenas uma pergunta? Envie uma mensagem — respondo o mais rápido possível.</p>
+
+                    <ul class="contact__channels" data-contact-channels data-reveal></ul>
+                </div>
+
+                <form class="contact-form" data-contact-form novalidate data-reveal>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="name">Nome</label>
+                            <input id="name" name="name" type="text" autocomplete="name" placeholder="O seu nome" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" autocomplete="email" placeholder="nome@empresa.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="subject">Assunto</label>
+                        <input id="subject" name="subject" type="text" placeholder="Oportunidade, projecto, parceria...">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Conte-me um pouco mais..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--block">
+                        Enviar mensagem <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+
+                    <p class="form-status" data-form-status role="status"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+        <div class="container footer">
+            <a href="#inicio" class="logo">
+                <span class="logo__name">Bill <span class="text-gradient">Arsénio</span></span>
+            </a>
+            <p class="footer__copy">&copy; <span data-year></span> Bill Arsénio Ndayisaba. Todos os direitos reservados.</p>
+            <ul class="socials" data-socials aria-label="Redes sociais"></ul>
         </div>
     </footer>
 
-   
-    
+    <button class="back-to-top" type="button" data-back-to-top aria-label="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
 </body>
-
 </html>

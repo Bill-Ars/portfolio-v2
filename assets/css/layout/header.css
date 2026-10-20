@@ -1,0 +1,169 @@
+.site-header {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 100;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+    transition:
+        background-color var(--duration) var(--ease),
+        border-color var(--duration) var(--ease),
+        height var(--duration) var(--ease);
+}
+
+/* Estado aplicado por header.js depois de algum scroll */
+.site-header.is-scrolled,
+.site-header.is-menu-open {
+    --header-height: 64px;
+    background-color: rgba(7, 11, 20, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-color: var(--color-border);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ---------- Logo ---------- */
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logo__name {
+    font-family: var(--font-heading);
+    font-size: var(--fs-xl);
+    font-weight: 800;
+    color: var(--color-heading);
+}
+
+.logo__role {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+/* ---------- Menu (mobile first: painel deslizante) ---------- */
+.nav__menu {
+    position: fixed;
+    inset: var(--header-height) 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    padding: var(--space-6) var(--space-4);
+    background-color: rgba(7, 11, 20, 0.97);
+    border-bottom: 1px solid var(--color-border);
+    transform: translateY(-12px);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        transform var(--duration) var(--ease),
+        opacity var(--duration) var(--ease),
+        visibility var(--duration);
+}
+
+.nav__menu.is-open {
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.nav__link {
+    position: relative;
+    display: block;
+    padding: var(--space-2) 0;
+    font-size: var(--fs-lg);
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: color var(--duration-fast);
+}
+
+.nav__link:hover,
+.nav__link.is-active {
+    color: var(--color-heading);
+}
+
+/* ---------- Botão hambúrguer ---------- */
+.nav__toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+.nav__toggle span {
+    height: 2px;
+    background: var(--color-heading);
+    border-radius: 2px;
+    transition: transform var(--duration) var(--ease), opacity var(--duration-fast);
+}
+
+.nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---------- Desktop ---------- */
+@media (min-width: 992px) {
+    .nav__toggle {
+        display: none;
+    }
+
+    .nav__menu {
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-6);
+        padding: 0;
+        background: none;
+        border: none;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav__list {
+        flex-direction: row;
+        gap: var(--space-5);
+    }
+
+    .nav__link {
+        font-size: var(--fs-sm);
+    }
+
+    .nav__link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--gradient-brand);
+        border-radius: 2px;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform var(--duration) var(--ease);
+    }
+
+    .nav__link:hover::after,
+    .nav__link.is-active::after {
+        transform: scaleX(1);
+    }
+}

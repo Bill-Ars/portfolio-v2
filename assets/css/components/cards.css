@@ -1,0 +1,78 @@
+/* Cartão base: usado em serviços, info, timeline e projectos */
+.card {
+    position: relative;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition:
+        transform var(--duration) var(--ease),
+        border-color var(--duration) var(--ease),
+        box-shadow var(--duration) var(--ease);
+}
+
+.card--interactive:hover {
+    transform: translateY(-6px);
+    border-color: rgba(59, 130, 246, 0.45);
+    box-shadow: var(--shadow-md);
+}
+
+/* Ícone quadrado com fundo suave */
+.icon-box {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: rgba(59, 130, 246, 0.12);
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    transition: background-color var(--duration), color var(--duration);
+}
+
+.card--interactive:hover .icon-box {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+/* Pequenos cartões flutuantes no hero */
+.floating-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background: rgba(15, 23, 41, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: var(--color-heading);
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-card i {
+    font-size: 1.6rem;
+    color: var(--color-accent);
+}
+
+.floating-card strong {
+    display: block;
+    font-size: var(--fs-sm);
+}
+
+.floating-card small {
+    color: var(--color-text-muted);
+    font-size: var(--fs-xs);
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    background: var(--color-success);
+    animation: pulse 1.8s ease-out infinite;
+}

@@ -1,0 +1,74 @@
+.form-row {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.form-field label {
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: #64748b;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Estado de erro aplicado por contactForm.js */
+.form-field.has-error input,
+.form-field.has-error textarea {
+    border-color: var(--color-danger);
+}
+
+.form-error {
+    color: var(--color-danger);
+    font-size: var(--fs-xs);
+}
+
+.form-status {
+    min-height: 1.4em;
+    font-size: var(--fs-sm);
+    text-align: center;
+}
+
+.form-status.is-success {
+    color: var(--color-success);
+}
+
+.form-status.is-error {
+    color: var(--color-danger);
+}
+
+@media (min-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}

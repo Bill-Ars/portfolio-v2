@@ -1,0 +1,81 @@
+.about {
+    display: grid;
+    gap: var(--space-7);
+    align-items: start;
+}
+
+.about__content p + p {
+    margin-top: var(--space-4);
+}
+
+.about__content .section__title {
+    margin-bottom: var(--space-5);
+}
+
+.about__highlights {
+    display: grid;
+    gap: var(--space-3);
+    margin-block: var(--space-6);
+}
+
+.about__highlights li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--color-text);
+    font-size: var(--fs-sm);
+}
+
+.about__highlights i {
+    color: var(--color-primary);
+}
+
+/* ---------- Cartão de informações ---------- */
+.info-card {
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+.info-card__list {
+    display: grid;
+    gap: var(--space-5);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.info-item__label {
+    display: block;
+    font-size: var(--fs-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.info-item__value {
+    color: var(--color-heading);
+    font-weight: 500;
+    word-break: break-word;
+}
+
+a.info-item__value:hover {
+    color: var(--color-primary);
+}
+
+@media (min-width: 600px) {
+    .about__highlights {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .about {
+        grid-template-columns: 1.3fr 1fr;
+        gap: var(--space-9);
+    }
+}

@@ -1,0 +1,49 @@
+.cta {
+    padding-top: var(--space-8);
+}
+
+.cta__box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-5);
+    padding: var(--space-7) var(--space-6);
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--color-primary-strong), #0e7490);
+    box-shadow: 0 30px 60px rgba(37, 99, 235, 0.25);
+}
+
+/* Círculo decorativo a rodar lentamente */
+.cta__box::after {
+    content: "";
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 260px;
+    height: 260px;
+    border: 40px solid rgba(255, 255, 255, 0.08);
+    border-radius: 40%;
+    animation: spin-slow 24s linear infinite;
+    pointer-events: none;
+}
+
+.cta__title {
+    font-size: var(--fs-2xl);
+}
+
+.cta__box p {
+    max-width: 520px;
+    margin-top: var(--space-2);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+@media (min-width: 768px) {
+    .cta__box {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--space-8);
+    }
+}

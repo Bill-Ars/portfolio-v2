@@ -1,0 +1,106 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: 0.8rem 1.4rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    white-space: nowrap;
+    transition:
+        transform var(--duration-fast) var(--ease),
+        box-shadow var(--duration) var(--ease),
+        background-color var(--duration-fast),
+        border-color var(--duration-fast),
+        color var(--duration-fast);
+}
+
+.btn i {
+    transition: transform var(--duration-fast) var(--ease);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:hover .fa-arrow-right {
+    transform: translateX(3px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* ---------- Variantes ---------- */
+.btn--primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background: var(--color-primary-strong);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn--ghost {
+    border-color: var(--color-border-strong);
+    color: var(--color-text);
+}
+
+.btn--ghost:hover {
+    border-color: var(--color-primary);
+    background: rgba(59, 130, 246, 0.08);
+}
+
+.btn--light {
+    background: #fff;
+    color: var(--color-primary-strong);
+}
+
+.btn--light:hover {
+    box-shadow: var(--shadow-md);
+}
+
+/* ---------- Tamanhos ---------- */
+.btn--sm {
+    padding: 0.55rem 1.1rem;
+}
+
+.btn--block {
+    width: 100%;
+}
+
+/* ---------- Voltar ao topo ---------- */
+.back-to-top {
+    position: fixed;
+    right: var(--space-4);
+    bottom: var(--space-4);
+    z-index: 90;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
+    color: #fff;
+    box-shadow: var(--shadow-glow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    transition:
+        opacity var(--duration) var(--ease),
+        transform var(--duration) var(--ease),
+        visibility var(--duration);
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.back-to-top:hover {
+    background: var(--color-primary-strong);
+}

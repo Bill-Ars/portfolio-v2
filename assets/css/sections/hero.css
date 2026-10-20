@@ -1,0 +1,207 @@
+.hero {
+    position: relative;
+    padding-top: calc(var(--header-height) + var(--space-7));
+    padding-bottom: var(--space-7);
+    overflow: hidden;
+}
+
+/* Fundo: grelha subtil + brilhos de cor */
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(600px circle at 85% 20%, rgba(59, 130, 246, 0.18), transparent 60%),
+        radial-gradient(500px circle at 10% 80%, rgba(34, 211, 238, 0.10), transparent 60%),
+        linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+    background-size: auto, auto, 56px 56px, 56px 56px;
+    mask-image: linear-gradient(to bottom, #000 70%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent);
+}
+
+.hero__grid {
+    display: grid;
+    gap: var(--space-8);
+    align-items: center;
+}
+
+/* ---------- Texto ---------- */
+.hero__title {
+    font-size: var(--fs-3xl);
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.hero__role {
+    display: flex;
+    align-items: center;
+    min-height: 1.6em;
+    margin-top: var(--space-3);
+    font-family: var(--font-heading);
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.hero__caret {
+    display: inline-block;
+    width: 3px;
+    height: 1.1em;
+    margin-left: 4px;
+    background: var(--color-accent);
+    animation: blink 1s steps(1) infinite;
+}
+
+.hero__text {
+    max-width: 540px;
+    margin-top: var(--space-4);
+    font-size: var(--fs-lg);
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+}
+
+/* ---------- Números (gerados por stats.js) ---------- */
+.hero__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+    margin-top: var(--space-7);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--color-border);
+}
+
+.stat__value {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-heading);
+    line-height: 1.1;
+}
+
+.stat__label {
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+}
+
+/* ---------- Fotografia ---------- */
+.hero__visual {
+    position: relative;
+    justify-self: center;
+    width: min(100%, 380px);
+}
+
+.hero__photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: 28px;
+    padding: 3px;
+    background: var(--gradient-brand);
+    box-shadow: 0 30px 80px rgba(59, 130, 246, 0.25);
+}
+
+.hero__photo::before {
+    content: "";
+    position: absolute;
+    inset: -40px;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.35), transparent 65%);
+    filter: blur(20px);
+}
+
+.hero__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    border-radius: 25px;
+}
+
+.floating-card--top {
+    top: 8%;
+    left: -12px;
+}
+
+.floating-card--bottom {
+    bottom: 8%;
+    right: -12px;
+    animation-delay: -3s;
+}
+
+/* ---------- Faixa de tecnologias ---------- */
+.tech-strip {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    padding: var(--space-5);
+    background: rgba(15, 23, 41, 0.6);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+.tech-strip__label {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.tech-strip__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-5);
+}
+
+.tech-strip__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    transition: color var(--duration-fast);
+}
+
+.tech-strip__item i {
+    font-size: 1.4rem;
+}
+
+.tech-strip__item:hover {
+    color: var(--color-heading);
+}
+
+/* ---------- Tablet / Desktop ---------- */
+@media (min-width: 768px) {
+    .floating-card--top    { left: -40px; }
+    .floating-card--bottom { right: -40px; }
+
+    .tech-strip {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero {
+        min-height: min(100vh, 920px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero__grid {
+        grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    .hero__visual {
+        justify-self: end;
+    }
+}

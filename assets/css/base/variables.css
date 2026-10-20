@@ -1,0 +1,65 @@
+/* Design tokens — alterar aqui muda o visual do site inteiro */
+:root {
+    /* Cores */
+    --color-bg: #070b14;
+    --color-bg-alt: #0a1020;
+    --color-surface: #0f1729;
+    --color-surface-2: #141e35;
+    --color-border: rgba(148, 163, 184, 0.14);
+    --color-border-strong: rgba(148, 163, 184, 0.28);
+
+    --color-text: #e6edf7;
+    --color-text-muted: #94a3b8;
+    --color-heading: #ffffff;
+
+    --color-primary: #3b82f6;
+    --color-primary-strong: #2563eb;
+    --color-accent: #22d3ee;
+    --color-success: #22c55e;
+    --color-danger: #f87171;
+
+    --gradient-brand: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+
+    /* Tipografia */
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-heading: "Plus Jakarta Sans", var(--font-body);
+
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.875rem;
+    --fs-base: 1rem;
+    --fs-lg: 1.125rem;
+    --fs-xl: 1.375rem;
+    --fs-2xl: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);
+    --fs-3xl: clamp(2.5rem, 1.6rem + 4.5vw, 4.5rem);
+
+    /* Espaçamento */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+    --space-9: 6rem;
+
+    /* Forma e profundidade */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 999px;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.35);
+    --shadow-glow: 0 10px 30px rgba(59, 130, 246, 0.35);
+
+    /* Layout */
+    --container-width: 1180px;
+    --header-height: 76px;
+
+    /* Movimento */
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --duration-fast: 0.2s;
+    --duration: 0.4s;
+    --duration-slow: 0.8s;
+}
